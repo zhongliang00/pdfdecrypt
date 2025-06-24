@@ -2,7 +2,7 @@ import createModule from "@neslinesli93/qpdf-wasm";
 
 export async function decryptPdf(file: File): Promise<Blob> {
   const qpdf = await createModule({
-    locateFile: () => "/wasm/qpdf.wasm",
+    locateFile: () => "wasm/qpdf.wasm", // Use relative path for static hosting compatibility
   });
   const inputPath = "/input.pdf";
   const outputPath = "/output.pdf";
